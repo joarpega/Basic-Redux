@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### Modificación: 1 en archivo app.conponent.ts
+Con la opcion select (regresa un observable) se puede seleccionar solo una propiedad que se encuentre en el STATE
+
+**Actual**
+~~~
+      this.store.select('contador')
+        .subscribe(contador => this.contador = contador);
+~~~  
+**Anterior**
+~~~
+      this.store.subscribe(state => {
+        this.contador = state.contador;
+      });
+~~~
+
+### Se implementa el archivo app.reducers.ts
+Este archivo contendra el detalle de la aplicación
